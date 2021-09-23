@@ -18,56 +18,76 @@ footer {
   justify-content: center;
 }
 
-div {
-  display: flex;
-}
 header p {
-  margin: 50px 0px;
+  margin: 0px 0px;
 }
 main {
   flex-grow: 1;
   align-items: flex-start;
+  align-items: center;
 }
 a {
   text-decoration: none;
   color: black;
 }
 button {
-  width: 40px;
   height: 40px;
+  border-radius: 10px;
 }
 input {
-  width: 250px;
   height: 40px;
+  display: flex;
+  flex-grow: 1;
+  margin-right: 30px;
+  border-radius: 10px;
 }
 
-#containerHeader {
+.containerHeader {
   flex-direction: row;
   align-items: center;
+  display: flex;
 }
-#containerHeader p {
+.containerHeader p {
   font-size: 70px;
   font-weight: 900;
   font-family: "Alegreya Sans", sans-serif;
 }
-#containerMain {
+.containerMain {
+  display: flex;
   border: solid black 2px;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: rgb(250, 234, 234);
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 40px 0px;
+  padding: 20px 15px 10px;
+}
+.inputAdd {
+  margin: 0;
 }
 .addTodo {
-  padding: 25px 25px 50px 25px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 25%;
 }
 
+.itemTodo {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.buttonTodo {
+  display: flex;
+  flex-direction: row;
+}
 .listTodo {
-  padding-bottom: 10px;
+  display: flex;
   flex-direction: column;
 }
-#containerFooter {
+.containerFooter {
+  display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: flex-start;
