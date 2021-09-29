@@ -62,10 +62,10 @@ input {
   align-items: center;
   padding: 20px 15px 10px;
 }
-.inputAdd {
+#inputAdd {
   margin: 0;
 }
-.addTodo {
+#addTodo {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -82,7 +82,7 @@ input {
   display: flex;
   flex-direction: row;
 }
-.listTodo {
+#listTodo {
   display: flex;
   flex-direction: column;
 }

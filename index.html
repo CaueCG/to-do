@@ -22,31 +22,12 @@
     </header>
     <main>
       <div class="containerMain">
-        <div class="addTodo">
-          <input class="inputAdd" type="text" placeholder="Add an new task" />
+        <form id="addTodo">
+          <input id="inputAdd" type="text" placeholder="Add a new task" />
           <button><i class="fas fa-check fa-lg"></i></button>
-        </div>
-        <div class="listTodo">
-          <div class="itemTodo">
-            <input type="text" value="tarefa" readonly />
-            <div class="buttonsTodo">
-              <button><i class="fas fa-edit fa-lg"></i></button>
-              <button><i class="fas fa-trash-alt fa-lg"></i></button>
-            </div>
-          </div>
-          <div class="itemTodo">
-            <input type="text" value="tarefa" readonly />
-            <div class="buttonsTodos">
-              <button><i class="fas fa-edit fa-lg"></i></button>
-              <button><i class="fas fa-trash-alt fa-lg"></i></button>
-            </div>
-          </div>
-          <div class="itemTodo">
-            <input type="text" value="tarefa" readonly />
-            <div class="buttonsTodos">
-              <button><i class="fas fa-edit fa-lg"></i></button>
-              <button><i class="fas fa-trash-alt fa-lg"></i></button>
-            </div>
+        </form>
+        <div id="listTodo">
+
           </div>
         </div>
       </div>
@@ -70,8 +51,6 @@
       </div>
     </footer>
 
-    <script>
-      src = "dist/bundle.js";
-    </script>
+    <script src="dist/bundle.js"></script>
   </body>
 </html>
