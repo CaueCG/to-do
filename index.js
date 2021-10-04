@@ -1,19 +1,12 @@
 const formTodo = document.getElementById("addTodo");
 const listTodo = document.getElementById("listTodo");
-const btnDelete = document.getElementsByClassName("btnDelete");
 
 let todo = [];
 
-const localStorageTodos = JSON.parse(localStorage.getItem("todo"));
-let todos = localStorage.getItem("todo") !== null ? localStorageTodos : [];
-
-const updateLocalStorage = () => {
-  localStorage.setItem("todo", JSON.stringify(todo));
-};
-
-/*try {
-  todo = JSON.parse(localStorage.getItem("todos")) || [];
-} catch {}*/
+try {
+  const todoLocalStorage = JSON.parse(localStorage.getItem("todos")) || [];
+  rechargeTodo(todoLocalStorage);
+} catch {}
 
 formTodo.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -25,22 +18,18 @@ formTodo.addEventListener("submit", (event) => {
       name: inputTodo.value,
       isDone: false,
     });
-    // localStorage.setItem("todos", JSON.stringify(todo));
+    rechargeTodo(todo);
+    localStorage.setItem("todos", JSON.stringify(todo));
     inputTodo.value = "";
-    console.log(todo);
-    updateLocalStorage();
   } else {
     alert("Empty field, type something!");
   }
-
-  rechargeTodo();
 });
 
-function rechargeTodo() {
-  listTodo.innerHTML = "";
+function rechargeTodo(todos) {
   let currentTodo = "";
 
-  todo.forEach((element, index) => {
+  todos.forEach((element, index) => {
     currentTodo += `   <div id="itemTodo${index}" class="itemTodo">
       <input type="text" value="${element.name}" readonly />
       <div class="buttonsTodo">
@@ -49,8 +38,19 @@ function rechargeTodo() {
       </div>
     </div>`;
   });
-  listTodo.innerHTML += currentTodo;
-  currentTodo = "";
+  listTodo.innerHTML = currentTodo;
+  deleteTodo(todos);
+}
+
+function deleteTodo(todos) {
+  todos.forEach((element, index) => {
+    const bDelete = document.getElementById(`btnDelete${index}`);
+    bDelete.addEventListener("click", () => {
+      todo.splice(index, 1);
+      rechargeTodo(todo);
+      localStorage.setItem("todos", JSON.stringify(todo));
+    });
+  });
 }
 
 /*todo.forEach((element, index) => {
