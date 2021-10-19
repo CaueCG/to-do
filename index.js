@@ -40,13 +40,32 @@ function rechargeTodo(todos) {
   });
   listTodo.innerHTML = currentTodo;
   deleteTodo(todos);
+  EditTodo(todos);
 }
 
 function deleteTodo(todos) {
   todos.forEach((element, index) => {
     const bDelete = document.getElementById(`btnDelete${index}`);
     bDelete.addEventListener("click", () => {
-      todo.splice(index, 1);
+      let answer = confirm("Do you really want to delete the task?");
+
+      if (answer == true) {
+        todo.splice(index, 1);
+        rechargeTodo(todo);
+        localStorage.setItem("todos", JSON.stringify(todo));
+      } else {
+        return;
+      }
+    });
+  });
+}
+
+function EditTodo(todos) {
+  todos.forEach((element, index) => {
+    const bEdit = document.getElementById(`btnEdit${index}`);
+    bEdit.addEventListener("click", () => {
+      let newName = prompt("Enter a new task, please.");
+      todo[index].name = newName;
       rechargeTodo(todo);
       localStorage.setItem("todos", JSON.stringify(todo));
     });
