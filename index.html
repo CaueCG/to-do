@@ -12,45 +12,14 @@
       src="https://kit.fontawesome.com/e743217a4b.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://apis.google.com/js/platform.js?onload=startApp"
+      async
+      defer
+    ></script>
   </head>
   <body>
-    <header>
-      <div class="containerHeader">
-        <i class="fas fa-tasks fa-5x"></i>
-        <p>TODO</p>
-      </div>
-    </header>
-    <main>
-      <div class="containerMain">
-        <form id="addTodo">
-          <input id="inputAdd" type="text" placeholder="Add a new task" />
-          <button><i class="fas fa-check fa-lg"></i></button>
-        </form>
-        <div id="listTodo">
-
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div class="containerFooter">
-        <div class="projectStudy">
-          <p>Project developed<br />by Caue CG</p>
-        </div>
-        <div class="palleteColors">
-          <i class="fas fa-palette fa-lg"></i>
-          <p>Light Theme</p>
-        </div>
-
-        <div class="iconSocialNetworks">
-          <a href="https://github.com/CaueCG" target="_blank"
-            ><i class="fab fa-github fa-lg"></i>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </div>
-    </footer>
-
+    <div id="wrapper"></div>
     <script src="dist/bundle.js"></script>
   </body>
 </html>
